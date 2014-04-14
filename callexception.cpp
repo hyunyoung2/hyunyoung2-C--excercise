@@ -34,7 +34,7 @@ int main()
 	}
 	catch(long expn)
 	{
-		cout << "예외코드: " << expn << endl;
+		cout << "예외코드 : " << expn << endl;
 	}
 
 	return 0;
