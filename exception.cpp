@@ -1,41 +1,49 @@
 #include <iostream>
-using namespace std;
 
-void SimpleFunThree(void)
+using namespace std;
+// 하나의 예외상황이 처리되는 경우
+// 예외처리 매커니즘ㅋ
+// 던져지는 예외처리 
+void Divide(int num1, int num2)
 {
-	try{
-	cout << "void SimpleFunThree(void)" << endl;
-	throw -1;
+	 try 
+	 {
+		 if(num2 ==0)
+			 throw num2;
+	 }
+	 catch(int expn)
+	 {
+		 cout << "first catch" << endl;
+		 throw;
+	 }
+}
+
+int main(void)
+{
+
+	try
+	{
+		Divide(9,2);
+		Divide(4,0);
 	}
 	catch(char expn)
 	{
-		cout << "catch(char esf)" <<endl;
+		cout << "second catch" << endl;
+		cout << "catch(char expn)"<<endl;
 	}
-}
-
-
-void SimpleFunTwo(void)
-{
-	cout << "void SimpleFunTwo(void)" << endl;
-	SimpleFunThree();
-}
-
-void SimpleFunOne(void)
-{
-	cout << "void SimpleFunOne(void)" << endl;
-	SimpleFunTwo();
-}
-
-int main()
-{
-	try
+	catch(int expn)
 	{
-		SimpleFunOne();
+		cout << "second catch" << endl;
+		cout << "catch(int expn)"<<endl;
 	}
 	catch(long expn)
 	{
-		cout << "예외코드: " << expn << endl;
+		cout << "second catch" << endl;
+		cout << "catch(long expn)"<<endl;
+
 	}
+
+	cout << "end of main"<< endl;
 
 	return 0;
 }
