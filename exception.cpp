@@ -2,7 +2,7 @@
 
 using namespace std;
 // 하나의 예외상황이 처리되는 경우
-// 예외처리 매커니즘ㅋ
+// 예외처리 매커니즘
 // 던져지는 예외처리 
 void Divide(int num1, int num2)
 {
